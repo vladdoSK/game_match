@@ -75,6 +75,8 @@ function disappear(obj) {
 
 
 function new_game() {
+    amount_player_step = 0;
+    left_move.innerHTML = `Left move: ${3-amount_player_step}`;
     modal_open.classList.add('active');
     const matches = document.querySelector('.matches_block');
     while (matches.firstChild) {
