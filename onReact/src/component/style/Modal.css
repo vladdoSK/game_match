@@ -1,0 +1,95 @@
+.modal_window,
+.modal_open {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    z-index: 3;
+}
+
+.modal_open {
+    transform: scale(1);
+}
+
+.modal_open.active {
+    transform: scale(0);
+}
+
+.modal_window.active {
+    transform: scale(1);
+}
+
+.modal_content {
+    width: 800px;
+    height: 400px;
+    background: white;
+    border-radius: 20px;
+
+    background: linear-gradient(to bottom, rgb(116, 3, 3), rgb(245, 138, 138));
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+
+}
+
+.block_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button--small_btn {
+    width: 100px;
+    font-size: 10px;
+}
+
+.button {
+    color: #840707;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    margin: 20px;
+    display: block;
+    background-image: linear-gradient(to left, transparent, transparent 50%, rgb(189, 3, 3) 50%, rgb(131, 3, 3));
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+    font: bold 15px tahoma;
+    border: 1px solid #b71709;
+}
+
+.button:hover {
+    background-position: 0 0;
+    color: #fff;
+}
+
+.button--small_btn {
+    width: 150px;
+}
