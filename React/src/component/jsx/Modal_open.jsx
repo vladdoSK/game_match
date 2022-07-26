@@ -5,13 +5,12 @@ const Modal_open = (props) => {
 
     function window_close()
     {
-        const modal = document.querySelector('.modal_open');
-        modal.classList.add('active');
+        props.setIsStartGame(false);
     }
 
 
     return (
-        <div className="modal_open">
+        <div className={props.isStartGame ? "modal_open" : "modal_open active"}>
             <div className="modal_content">
                 <h1>Welcome to our game</h1>
                 <div className="block_button">

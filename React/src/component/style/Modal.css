@@ -93,3 +93,77 @@
 .button--small_btn {
     width: 150px;
 }
+
+@media (max-width:700px) {
+
+    .modal_content {
+        width: 500px;
+        height: 200px;
+    }
+
+    .winner {
+        margin-bottom: 0px;
+    }
+
+    .winner h1{
+        font-size: 25px;
+    }
+
+    .power {
+        width: 30px;
+        height: 50px;
+        margin: 0 20px;
+    }
+
+    .lose {
+        width: 50px;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .modal_content {
+        width: 300px;
+        height: 150px;
+        padding-top: 15px;
+    }
+
+    .modal_content h1, .modal_content h2{
+        font-size: 20px;
+        margin-bottom: -10px;
+    }
+
+    .modal_content h2{
+        font-size: 18px;
+        margin-bottom: -10px;
+    }
+
+    .modal_content p{
+        font-size: 15px;
+    }
+
+    .button--small_btn {
+        width: 150px;
+        font-size: 10px;
+    }
+
+    .winner {
+        margin-bottom: 0px;
+    }
+
+    .winner h1{
+        font-size: 15px;
+    }
+
+    .power {
+        width: 15px;
+        height: 30px;
+        margin: 0 5px;
+    }
+
+    .lose {
+        width: 30px;
+    }
+
+}

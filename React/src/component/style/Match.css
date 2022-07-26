@@ -6,14 +6,6 @@
     justify-content: space-around;
 }
 
-.block {
-    width: 10px;
-    height: 70px;
-    margin: 35px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
 .match {
     display: flex;
     flex-direction: column;
@@ -23,6 +15,9 @@
     width: 10px;
     height: 70px;
     transition: .9s;
+    margin: 35px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .match.active .body_math {
@@ -31,7 +26,7 @@
     transition: .3s;
 }
 
-.match.active .head_match {
+.match.active .body_math::after {
     max-height: 0px;
     box-shadow: 0px 0px 0px 0px transparent;
     transition: .3s;
@@ -42,12 +37,16 @@
     transition: .3s;
 }
 
-.head_match {
+.body_math::after {
+    content: "";
     width: 10px;
     height: 15px;
+    top: -10px;
+    left: -2px;
     border-radius: 50%;
     background: linear-gradient(180deg, rgb(184, 3, 3), rgb(165, 46, 46));
     z-index: 1;
+    position: absolute;
     box-shadow: 2px -2px 3px 2px rgb(59, 58, 58);
 }
 
@@ -55,7 +54,7 @@
     width: 7px;
     height: 60px;
     background: linear-gradient(rgb(243, 163, 4), rgb(255, 179, 0));
-    position: absolute;
+    position: relative;
     top: 10px;
     border-radius: 2px;
     box-shadow: 2px 2px 3px 2px rgb(59, 58, 58);
@@ -72,7 +71,7 @@
     transition: .2s;
 }
 
-.match:hover .head_match {
+.match:hover .body_math::after {
     width: 13px;
     height: 17px;
     transition: .2s;
@@ -85,18 +84,13 @@
         height: 350px;
     }
 
-    .block {
+    .match {
         width: 7px;
         height: 55px;
         margin: 5px 25px;
     }
 
-    .match {
-        width: 7px;
-        height: 55px;
-    }
-
-    .head_match {
+    .body_math::after{
         width: 7px;
         height: 11px;
     }
@@ -113,78 +107,11 @@
         transition: .2s;
     }
 
-    .match:hover .head_match {
+    .match:hover .body_math::after {
         width: 11px;
         height: 15px;
         transition: .2s;
     }
-
-    .player,
-    .computer {
-        text-align: center;
-        width: 100px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .player h1,
-    .computer h1 {
-        font-size: 20px;
-    }
-
-    .player h2,
-    .computer h2 {
-        font-size: 17px;
-    }
-
-    .left_move,
-    .warning {
-        font-size: 12px;
-    }
-
-    .warning{
-        margin-top: 30px;
-    }
-
-    .player_back,
-    .computer_back {
-        content: "";
-        width: 100px;
-    }
-
-    .computer_back {
-        height: 90px;
-    }
-
-    .warning::before {
-        content: "";
-        width: 100px;
-        height: 40px;
-    }
-
-    .modal_content {
-        width: 500px;
-        height: 200px;
-    }
-
-    .winner {
-        margin-bottom: 0px;
-    }
-
-    .winner h1{
-        font-size: 25px;
-    }
-
-    .power {
-        width: 30px;
-        height: 50px;
-        margin: 0 20px;
-    }
-
-    .lose {
-        width: 50px;
-    }
-
 }
 
 @media (max-width:500px) {
@@ -194,18 +121,13 @@
         height: 350px;
     }
 
-    .block {
+    .match {
         width: 7px;
         height: 55px;
         margin: 5px 25px;
     }
 
-    .match {
-        width: 7px;
-        height: 55px;
-    }
-
-    .head_match {
+    .body_math::after {
         width: 7px;
         height: 11px;
     }
@@ -222,113 +144,9 @@
         transition: .2s;
     }
 
-    .match:hover .head_match {
+    .match:hover .body_math::after {
         width: 11px;
         height: 15px;
         transition: .2s;
     }
-
-    .player,
-    .computer {
-        text-align: center;
-        width: 80px;
-        position: absolute;
-        z-index: 2;
-    }
-
-    .computer{
-        top:50px;
-        left: 50px;
-    }
-
-    .player{
-        top:50px;
-        left: 260px;
-    }
-
-    .player h1,
-    .computer h1 {
-        font-size: 15px;
-        margin-bottom: -10px;
-    }
-
-    .player h2,
-    .computer h2 {
-        font-size: 15px;
-        margin-bottom: -10px;
-    }
-
-    .left_move,
-    .warning {
-        font-size: 10px;
-    }
-
-    .warning{
-        margin-top: 10px;
-        font-size: 9px;
-        
-    }
-
-    .player_back,
-    .computer_back {
-        width: 80px;
-    }
-
-    .player_back {
-        height: 70px;
-    }
-
-    .computer_back {
-        height: 60px;
-    }
-
-    .warning::before {
-        content: "";
-        width: 80px;
-        height: 23px;
-    }
-
-    .modal_content {
-        width: 300px;
-        height: 150px;
-        padding-top: 15px;
-    }
-
-    .modal_content h1, .modal_content h2{
-        font-size: 20px;
-        margin-bottom: -10px;
-    }
-
-    .modal_content h2{
-        font-size: 18px;
-        margin-bottom: -10px;
-    }
-
-    .modal_content p{
-        font-size: 15px;
-    }
-
-    .button--small_btn {
-        width: 100px;
-        font-size: 10px;
-    }
-
-    .winner {
-        margin-bottom: 0px;
-    }
-
-    .winner h1{
-        font-size: 15px;
-    }
-
-    .power {
-        width: 15px;
-        height: 30px;
-        margin: 0 5px;
-    }
-
-    .lose {
-        width: 30px;
-    }
-
 }
